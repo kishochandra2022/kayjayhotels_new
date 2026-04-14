@@ -1,0 +1,56 @@
+
+# Redirect HTTP to HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect www to non-www (optional, choose one or the other)
+RewriteCond %{HTTP_HOST} ^www\.kayjayhotels\.com [NC]
+RewriteRule ^ https://kayjayhotels.com%{REQUEST_URI} [L,R=301]
+
+# Caching for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+    ExpiresDefault "access plus 1 year"
+  </FilesMatch>
+
+  <FilesMatch "\.(js|css)$">
+    ExpiresDefault "access plus 1 week"
+  </FilesMatch>
+
+  <FilesMatch "\.(html|htm|json|xml|txt|pdf)$">
+    ExpiresDefault "access plus 1 day"
+  </FilesMatch>
+</IfModule>
+
+# Gzip compression for text-based assets
+<IfModule mod_filter.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# For HashRouter, the server usually only sees the root index.html,
+# so a traditional SPA fallback is less critical for routing itself.
+# However, this ensures any direct access to non-existent paths (if browser history were used)
+# or internal server errors would fall back to index.html gracefully.
+# For hash routing, the user navigates to mydomain.com/#/path. The server only receives a request for mydomain.com/.
+# So, this rule isn't strictly necessary for hash routing functionality but is good for robustness.
+<IfModule mod_rewrite.c>
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF--8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kayjay Hotels | Exquisite Luxury Resorts in Sri Lanka</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5KF10D0K31"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5KF10D0K31');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#6A0DAD',     // Amethyst / Luxury Purple
+              'brand-secondary': '#4A0077',   // Darker Indigo-Purple / Plum
+              'brand-dark': '#1A1A1A',       // Dark Charcoal
+              'brand-light': '#F2F0F5',      // Subtle Lavender-Grey Off-white
+              'brand-gray': '#C5B4E3',       // Muted Lavender-Gray
+              'text-dark': '#333333',        // Primary text color
+              'text-light': '#AAAAAA',       // Secondary text color
+            },
+            fontFamily: {
+              sans: ['"Montserrat"', 'sans-serif'], // Body text
+              serif: ['"Playfair Display"', 'serif'], // Headings
+            },
+            borderRadius: {
+              'xl': '0.75rem', // Custom 'xl' for a slightly softer feel
+            },
+            keyframes: {
+              slideIn: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+            },
+            animation: {
+              slide: 'slideIn 1s ease-out',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Force white background on browser autofill */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover,
+      textarea:-webkit-autofill:focus,
+      select:-webkit-autofill,
+      select:-webkit-autofill:hover,
+      select:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+        -webkit-text-fill-color: #000000 !important;
+      }
+      /* Utility for hiding scrollbars */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+      /* Styles for WordPress content */
+      .prose {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.125rem;
+        line-height: 1.8; /* Slightly increased line-height for luxury feel */
+        color: #333333; /* text-dark */
+      }
+      .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+        font-family: "Playfair Display", serif; /* Serif for headings */
+        font-weight: 700;
+        margin-top: 1.8em; /* More vertical space */
+        margin-bottom: 0.8em;
+        color: #1A1A1A; /* brand-dark */
+      }
+      .prose h1 { font-size: 2.8rem; line-height: 1.2; }
+      .prose h2 { font-size: 2.2rem; line-height: 1.25; }
+      .prose h3 { font-size: 1.7rem; line-height: 1.3; }
+      .prose p {
+        margin-bottom: 1.5em; /* More vertical space */
+      }
+      .prose a {
+        color: '#6A0DAD'; /* brand-primary (new purple) */
+        text-decoration: underline;
+        transition: color 0.2s;
+      }
+      .prose a:hover {
+        color: '#4A0077'; /* brand-secondary (new darker purple) */
+      }
+      .prose ul, .prose ol {
+        margin-left: 1.8rem; /* More indent */
+        margin-bottom: 1.5em;
+      }
+      .prose ul { list-style-type: disc; }
+      .prose ol { list-style-type: decimal; }
+      .prose blockquote {
+        border-left: 4px solid '#C5B4E3'; /* brand-gray (new lavender-gray) */
+        padding-left: 1.2rem; /* More padding */
+        font-style: italic;
+        color: #6B7280; /* Slightly darker gray for prose blockquote */
+      }
+      .prose img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.75rem; /* rounded-xl */
+        margin-top: 2.5em; /* More vertical space */
+        margin-bottom: 2.5em;
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.08); /* Slightly richer shadow */
+      }
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.8.2",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.17.0",
+    "react-helmet-async": "https://aistudiocdn.com/react-helmet-async@^2.0.5"
+  }
+}
+</script>
+  <!-- Global Organization Schema - Managed by Helmet now. This is just an example of what was here. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kayjay Hotels",
+    "slogan": "Luxury in every detail",
+    "url": "https://kayjayhotels.com/",
+    "logo": "https://kayjayhotels.com/public/images/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+94-74-202-1777",
+      "contactType": "Customer Service"
+    }
+  }
+  </script>
+  <!-- Facebook Pixel Code -->
+  <!--
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+  /></noscript>
+  -->
+  <!-- End Facebook Pixel Code -->
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-brand-light">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
